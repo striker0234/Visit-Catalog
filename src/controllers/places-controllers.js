@@ -1,5 +1,5 @@
 const uuid = require('uuid/v4');
-const { validationResult } = require('express-validator');
+// const { validationResult } = require('express-validator');
 const mongoose = require('mongoose');
 const fs = require('fs')
 
@@ -59,12 +59,12 @@ const getPlacesByUserId = async (req, res, next) => {
 };
 
 const createPlace = async (req, res, next) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return next(
-      new HttpError('Invalid inputs passed, please check your data.', 422)
-    );
-  }
+  // const errors = validationResult(req);
+  // if (!errors.isEmpty()) {
+  //   return next(
+  //     new HttpError('Invalid inputs passed, please check your data.', 422)
+  //   );
+  // }
 
   const { title, description, address } = req.body;
 
